@@ -55,12 +55,6 @@ export default appTarget => {
             simulateScratchDesktop = scratchDesktopMatches[1];
         }
     }
-    const extensionURLMatches = window.location.href.match(/[?&](?:extension|url)=([^&]*)&?/);
-    const extensionURL = extensionURLMatches ? decodeURIComponent(extensionURLMatches[1]) : null;
-
-        if (extensionURL) {
-          vm.extensionManager.loadExtensionURL(extensionURL);
-	}
 
     if (process.env.NODE_ENV === 'production' && typeof window === 'object') {
         // Warn before navigating away
